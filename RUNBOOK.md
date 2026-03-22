@@ -484,37 +484,3 @@ spark-submit \
 cd ~/realtime-rec-system
 python3 -m uvicorn app.api:app --host 0.0.0.0 --port 8000
 ```
-
----
-
-## 19. Demo script
-
-1. Start all services using this runbook
-2. Open Swagger at `/docs`
-3. Query a user recommendation
-4. Let the event generator keep running
-5. Query again after 20–30 seconds
-6. Explain the hybrid architecture:
-
-   * review-aware offline collaborative filtering
-   * genre-aware candidate generation
-   * Kafka + Spark live streaming updates
-   * Redis low-latency serving
-   * FastAPI fallback logic
-
----
-
-## 20. Shutdown
-
-Stop processes with `Ctrl+C` in each terminal.
-
-Recommended stop order:
-
-1. FastAPI
-2. Spark
-3. Event generator
-4. Kafka
-5. Redis
-
-If you are done for the day, stop the EC2 instance in AWS to avoid unnecessary charges.
-
